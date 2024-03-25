@@ -1,0 +1,240 @@
+BLOCK RESETPATHS ;
+BLOCK ASYNCPATHS ;
+LOCATE COMP "rx" SITE "a11" ; // b4
+LOCATE COMP "tx" SITE "c11" ; // b5
+LOCATE COMP "rst_out" SITE "c12" ;
+LOCATE COMP "trigger" SITE "e10" ;
+LOCATE COMP "glitcher_out" SITE "m16" ; // e14
+LOCATE COMP "rstn" SITE "B3" ;
+LOCATE COMP "LED[0]" SITE "H11" ;
+LOCATE COMP "LED[1]" SITE "J13" ;
+LOCATE COMP "LED[2]" SITE "J11" ;
+LOCATE COMP "LED[3]" SITE "L12" ;
+LOCATE COMP "LED[4]" SITE "K11" ;
+LOCATE COMP "LED[5]" SITE "L13" ;
+LOCATE COMP "LED[6]" SITE "N15" ;
+LOCATE COMP "LED[7]" SITE "P16" ;
+LOCATE COMP "DIPSW[0]" SITE "N2" ;
+LOCATE COMP "DIPSW[1]" SITE "P1" ;
+LOCATE COMP "DIPSW[2]" SITE "M3" ;
+//LOCATE COMP "DIPSW[3]" SITE "N1" ;
+LOCATE COMP "clk_12M" SITE "C8" ;
+IOBUF PORT "clk_12M" PULLMODE=NONE IO_TYPE=LVCMOS33 ;
+IOBUF PORT "DIPSW[0]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "DIPSW[1]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "DIPSW[2]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+//IOBUF PORT "DIPSW[3]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "rstn" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[0]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[1]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[2]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[3]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[4]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[5]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[6]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "LED[7]" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "rx" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "tx" PULLMODE=UP IO_TYPE=LVCMOS33 ;
+IOBUF PORT "trigger" PULLMODE=NONE IO_TYPE=LVCMOS33 SLEWRATE=FAST ;
+IOBUF PORT "rst_out" PULLMODE=NONE IO_TYPE=LVCMOS33 SLEWRATE=FAST ;
+IOBUF PORT "glitcher_out" PULLMODE=UP IO_TYPE=LVCMOS33 SLEWRATE=FAST DRIVE=16 ;
+SYSCONFIG MASTER_SPI_PORT=DISABLE CONFIGURATION=CFG ;
+INPUT_SETUP ALLPORTS 50.000000 ns HOLD 12.000000 ns CLKNET "clk" ;
+INPUT_SETUP PORT "rstn" 50.000000 ns CLKNET "clk" ;
+DEFINE CELL GROUP "HOLDOFF" "holdoff_value_i0_i30"
+"holdoff_value_i0_i29"
+"holdoff_value_i0_i28"
+"holdoff_value_i0_i27"
+"holdoff_value_i0_i26"
+"holdoff_value_i0_i25"
+"holdoff_value_i0_i24"
+"holdoff_value_i0_i23"
+"holdoff_value_i0_i22"
+"holdoff_value_i0_i0"
+"holdoff_value_i0_i21"
+"holdoff_value_i0_i20"
+"holdoff_value_i0_i19"
+"holdoff_value_i0_i18"
+"holdoff_value_i0_i17"
+"holdoff_value_i0_i16"
+"holdoff_value_i0_i15"
+"holdoff_value_i0_i14"
+"holdoff_value_i0_i13"
+"holdoff_value_i0_i12"
+"holdoff_value_i0_i11"
+"holdoff_value_i0_i10"
+"holdoff_value_i0_i9"
+"holdoff_value_i0_i8"
+"holdoff_value_i0_i7"
+"holdoff_value_i0_i6"
+"holdoff_value_i0_i5"
+"holdoff_value_i0_i4"
+"holdoff_value_i0_i3"
+"holdoff_value_i0_i2"
+"holdoff_value_i0_i1"
+"holdoff_value_i0_i31" ;
+DEFINE CELL GROUP "GLITCHER" "GLITCH_inst/counter__i0"
+"GLITCH_inst/pattern_ctr__i0"
+"GLITCH_inst/state__i0"
+"GLITCH_inst/out_i1"
+"GLITCH_inst/state__i1"
+"GLITCH_inst/rst_43"
+"GLITCH_inst/counter__i1"
+"GLITCH_inst/counter__i2"
+"GLITCH_inst/counter__i3"
+"GLITCH_inst/counter__i4"
+"GLITCH_inst/counter__i5"
+"GLITCH_inst/counter__i6"
+"GLITCH_inst/counter__i7"
+"GLITCH_inst/counter__i8"
+"GLITCH_inst/counter__i9"
+"GLITCH_inst/counter__i10"
+"GLITCH_inst/counter__i11"
+"GLITCH_inst/counter__i12"
+"GLITCH_inst/counter__i13"
+"GLITCH_inst/counter__i14"
+"GLITCH_inst/counter__i15"
+"GLITCH_inst/counter__i16"
+"GLITCH_inst/counter__i17"
+"GLITCH_inst/counter__i18"
+"GLITCH_inst/counter__i19"
+"GLITCH_inst/counter__i20"
+"GLITCH_inst/counter__i21"
+"GLITCH_inst/counter__i22"
+"GLITCH_inst/counter__i23"
+"GLITCH_inst/counter__i24"
+"GLITCH_inst/counter__i25"
+"GLITCH_inst/counter__i26"
+"GLITCH_inst/counter__i27"
+"GLITCH_inst/counter__i28"
+"GLITCH_inst/counter__i29"
+"GLITCH_inst/counter__i30"
+"GLITCH_inst/counter__i31"
+"GLITCH_inst/pattern_ctr__i1"
+"GLITCH_inst/pattern_ctr__i2"
+"GLITCH_inst/pattern_ctr__i3"
+"GLITCH_inst/pattern_ctr__i4"
+"GLITCH_inst/pattern_ctr__i5"
+"GLITCH_inst/out_i0" ;
+MAXDELAY FROM GROUP "HOLDOFF" TO GROUP "GLITCHER" 100.000000 ns ;
+DEFINE CELL GROUP "WIDTH" "width_value_i0_i45"
+"width_value_i0_i44"
+"width_value_i0_i43"
+"width_value_i0_i42"
+"width_value_i0_i41"
+"width_value_i0_i40"
+"width_value_i0_i39"
+"width_value_i0_i38"
+"width_value_i0_i0"
+"width_value_i0_i37"
+"width_value_i0_i36"
+"width_value_i0_i35"
+"width_value_i0_i34"
+"width_value_i0_i33"
+"width_value_i0_i32"
+"width_value_i0_i31"
+"width_value_i0_i30"
+"width_value_i0_i29"
+"width_value_i0_i28"
+"width_value_i0_i27"
+"width_value_i0_i26"
+"width_value_i0_i25"
+"width_value_i0_i24"
+"width_value_i0_i23"
+"width_value_i0_i22"
+"width_value_i0_i21"
+"width_value_i0_i20"
+"width_value_i0_i19"
+"width_value_i0_i18"
+"width_value_i0_i17"
+"width_value_i0_i16"
+"width_value_i0_i15"
+"width_value_i0_i14"
+"width_value_i0_i13"
+"width_value_i0_i12"
+"width_value_i0_i11"
+"width_value_i0_i10"
+"width_value_i0_i9"
+"width_value_i0_i8"
+"width_value_i0_i7"
+"width_value_i0_i6"
+"width_value_i0_i5"
+"width_value_i0_i4"
+"width_value_i0_i3"
+"width_value_i0_i2"
+"width_value_i0_i1"
+"width_value_i0_i47"
+"width_value_i0_i48"
+"width_value_i0_i49"
+"width_value_i0_i50"
+"width_value_i0_i51"
+"width_value_i0_i52"
+"width_value_i0_i53"
+"width_value_i0_i54"
+"width_value_i0_i55"
+"width_value_i0_i56"
+"width_value_i0_i57"
+"width_value_i0_i58"
+"width_value_i0_i59"
+"width_value_i0_i60"
+"width_value_i0_i61"
+"width_value_i0_i62"
+"width_value_i0_i63"
+"width_value_i0_i46" ;
+MAXDELAY FROM GROUP "WIDTH" TO GROUP "GLITCHER" 100.000000 ns ;
+DEFINE CELL GROUP "UART" "UART_TX_inst/ctr_i0"
+"UART_TX_inst/bit__i0"
+"UART_TX_inst/tx_35"
+"UART_TX_inst/ctr_i4"
+"UART_TX_inst/tx_done_32"
+"UART_TX_inst/ctr_i1"
+"UART_TX_inst/ctr_i2"
+"UART_TX_inst/ctr_i3"
+"UART_TX_inst/ctr_i5"
+"UART_TX_inst/ctr_i6"
+"UART_TX_inst/ctr_i7"
+"UART_TX_inst/ctr_i8"
+"UART_TX_inst/ctr_i9"
+"UART_TX_inst/ctr_i10"
+"UART_TX_inst/ctr_i11"
+"UART_TX_inst/ctr_i12"
+"UART_TX_inst/ctr_i13"
+"UART_TX_inst/ctr_i14"
+"UART_TX_inst/ctr_i15"
+"UART_TX_inst/bit__i1"
+"UART_TX_inst/bit__i2"
+"UART_TX_inst/bit__i3"
+"UART_RX_inst/rx_byte_i0_i5"
+"UART_RX_inst/rx_49"
+"UART_RX_inst/rx__50"
+"UART_RX_inst/rx_byte_i0_i6"
+"UART_RX_inst/data_ready_45"
+"UART_RX_inst/bit_471__i3"
+"UART_RX_inst/bit_471__i1"
+"UART_RX_inst/bit_471__i2"
+"UART_RX_inst/rx_byte_i0_i3"
+"UART_RX_inst/rx_byte_i0_i2"
+"UART_RX_inst/rx_byte_i0_i1"
+"UART_RX_inst/rx_byte_i0_i7"
+"UART_RX_inst/ctr_473__i0"
+"UART_RX_inst/start_bit_48"
+"UART_RX_inst/ctr_473__i1"
+"UART_RX_inst/bit_471__i0"
+"UART_RX_inst/ctr_473__i2"
+"UART_RX_inst/ctr_473__i3"
+"UART_RX_inst/ctr_473__i4"
+"UART_RX_inst/ctr_473__i5"
+"UART_RX_inst/ctr_473__i6"
+"UART_RX_inst/ctr_473__i7"
+"UART_RX_inst/ctr_473__i8"
+"UART_RX_inst/ctr_473__i9"
+"UART_RX_inst/ctr_473__i10"
+"UART_RX_inst/ctr_473__i11"
+"UART_RX_inst/ctr_473__i12"
+"UART_RX_inst/ctr_473__i13"
+"UART_RX_inst/ctr_473__i14"
+"UART_RX_inst/ctr_473__i15"
+"UART_RX_inst/rx_byte_i0_i0"
+"UART_RX_inst/rx_byte_i0_i4" ;
+MAXDELAY FROM GROUP "UART" TO GROUP "GLITCHER" 100.000000 ns ;
+USE PRIMARY NET "clk" ;

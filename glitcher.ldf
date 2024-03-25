@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="glitcher" device="LCMXO3L-6900C-5BG256C" default_implementation="impl1">
+    <Options/>
+    <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="glitch_pulse" top="glitcher"/>
+        <Source name="src/main.v" type="Verilog" type_short="Verilog">
+            <Options top_module="glitcher"/>
+        </Source>
+        <Source name="src/uart_rx.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/uart_tx.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/pll.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/glitch.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="glitcher.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+        <Source name="impl1/impl1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="glitcher1.sty"/>
+</BaliProject>
